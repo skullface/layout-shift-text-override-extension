@@ -1,0 +1,40 @@
+{
+  "name": "Layout shift text override check",
+  "description": "Override existing type styles with the accessible requirements to test for layout shift.",
+  "version": "1.0",
+  "manifest_version": 2,
+  "icons": {
+    "16": "/images/layoutShift-16.png",
+    "32": "/images/layoutShift-32.png",
+    "48": "/images/layoutShift-48.png",
+    "128": "/images/layoutShift-128.png"
+  },
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "permissions": [ "storage" ],
+  "browser_action": {
+    "default_icon": {
+      "16": "/images/layoutShift-16.png",
+      "32": "/images/layoutShift-32.png",
+      "48": "/images/layoutShift-48.png",
+      "128": "/images/layoutShift-128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "css": [
+        "override-type.css"
+      ],
+      "js": [
+        "override-type.js"
+      ],
+      "run_at": "document_end",
+      "all_frames": false
+    }
+  ]
+}

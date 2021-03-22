@@ -1,0 +1,10 @@
+.layoutShiftTextOverride,
+.layoutShiftTextOverride > * {
+  line-height: 150%;
+  letter-spacing: 0.12rem;
+  word-spacing: 0.16rem;
+}
+
+* + p {
+  margin-bottom: 2rem;
+}
